@@ -21,7 +21,7 @@ variable "key_pair" {
 
 variable "instance_type" {
     description = "Instance type for the simple instance"
-    default = "t3.large"
+    default = "t2.micro"
 }
 
 variable "prefix" {
