@@ -5,9 +5,6 @@ resource "aws_instance" "simple-server" {
     iam_instance_profile = aws_iam_instance_profile.simple-main-profile.id
     vpc_security_group_ids = [aws_security_group.simple-server-sg.id]
     user_data = templatefile("${path.module}/scripts/simple-install.sh", {
-        AWS_ACCESS_KEY = var.aws_access_key,
-        AWS_SECRET_KEY = var.aws_secret_key,
-        AWS_SESSION_TOKEN = var.aws_session_token,
         AWS_REGION = var.aws_region
     })
 
